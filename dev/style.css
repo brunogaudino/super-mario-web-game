@@ -1,0 +1,64 @@
+*{
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/*Screenboard*/
+.game-board{
+  border: 1px solid #333;
+  width: 80%;
+  height: 300px;
+  margin: 10px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/*Hero*/
+.mario {
+  position: absolute;
+  bottom: 0;
+  width: 80px;
+}
+
+/*Enemies*/
+.pipe{
+  position: absolute;
+  bottom: 0;
+  width: 40px;
+  right: -40px;
+  animation: pipe-animation 2s infinite linear;
+}
+
+/*Animations*/
+.jump{
+  animation: jump 500ms ease-out;
+}
+
+@keyframes pipe-animation{
+  from{
+    right: -40px;
+  }
+  to{
+    right: 100%;  
+  }
+}
+
+@keyframes jump {
+  0%{
+    bottom: 0;
+  }
+  40%{
+    bottom: 180px;
+  }
+  50%{
+    bottom: 180px;
+  }
+  60%{
+    bottom: 180px;
+  }
+  100%{
+    bottom: 0;
+  }
+}
