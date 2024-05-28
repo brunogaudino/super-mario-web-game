@@ -7,12 +7,13 @@
 
 /*Screenboard*/
 .game-board{
-  border: 1px solid #333;
-  width: 80%;
+  width: 100%;
   height: 300px;
-  margin: 10px auto;
+  border-bottom: 15px solid rgb(35,160,35);
+  margin: 0px auto;
   position: relative;
   overflow: hidden;
+  background: linear-gradient(#87CEEB, #E0F6FF);
 }
 
 /*Hero*/
@@ -27,11 +28,40 @@
   position: absolute;
   bottom: 0;
   width: 40px;
-  right: -40px;
+  /* left: 60px; */
+  /* right: -40px; */
   animation: pipe-animation 2s infinite linear;
 }
 
+/*Controls*/
+.button-moves {
+  width: 35px;
+  height: 35px;
+  opacity: 0.3;
+  position: absolute;
+}
+
+.button-up{
+  top: 0px;
+}
+
+.button-down{
+  top: 40px;
+}
+
 /*Animations*/
+.clouds{
+  position: absolute;
+  width: 250px;
+  animation: clouds-animation 15s infinite linear;
+}
+
+/*
+.clouds-1{}
+.clouds-2{
+  animation: clouds-animation 30s infinite linear;
+} */
+
 .jump{
   animation: jump 500ms ease-out;
 }
@@ -60,5 +90,14 @@
   }
   100%{
     bottom: 0;
+  }
+}
+
+@keyframes clouds-animation{
+  from{
+    right: -250px;
+  }
+  to{
+    right: 100%;
   }
 }
