@@ -1,38 +1,60 @@
-//parou 14m
-const mario = document.querySelector('.mario');
-const buttonUp = document.querySelector('.button-up');
-const pipe = document.querySelector('.pipe');
+//Mario
+const mario = document.querySelector('.mario.walking');
+const marioLose = document.querySelector('.mario.lose');
 
+//Buttons
+const buttonUp = document.querySelector('.button-up');
+
+//Enemies
+const enemy = document.querySelector('.pipe');
+let countEnemies = 0;
+
+//Background
+const clouds1 = document.querySelector('.clouds-1');
+const clouds2 = document.querySelector('.clouds-2');
+
+//Game Start
+const gameStart = setInterval(() => {
+
+  const enemyPosition = enemy.offsetLeft;
+  const marioPosition = +window.getComputedStyle(mario).bottom.replace('px','');
+
+  gameRules(enemyPosition, marioPosition);
+
+}, 10);
+
+//Game Rules
+const gameRules = ((enemyPosition, marioPosition) => {
+
+  //If Mario hit a enemy
+  if (enemyPosition <= 60 && enemyPosition > 0 && marioPosition < 55) {
+    console.log('hit');
+    enemy.style.animation = 'none';
+    enemy.style.left = `${enemyPosition}px`;
+  
+    mario.classList.add('display-none');
+  
+    marioLose.classList.remove('display-none');
+    marioLose.style.bottom = `${marioPosition}px`;
+
+    clearInterval(gameStart);
+    
+  } 
+
+});
+
+//Actions
 const jump = () => {
+
   mario.classList.add('jump');
   
   setTimeout(() => {
     mario.classList.remove('jump');
   },500);
+
 }
 
-const loop = setInterval(() => {
 
-  const pipePosition = pipe.offsetLeft;
-  const marioPosition = +window.getComputedStyle(mario).bottom.replace('px','');
-
-  if (pipePosition <= 60 && pipePosition > 0 && marioPosition < 55) {
-
-    pipe.style.animation = 'none';
-    pipe.style.left = `${pipePosition}px`;
-
-    mario.style.animation = 'none';
-    mario.style.bottom = `${marioPosition}px`;
-
-    mario.src = './img/game-over.png';
-    mario.style.width = '40px';
-    mario.style.marginLeft = `20px`;
-
-    clearInterval(loop);
-  
-  }
-
-}, 10);
-
+//Commands
 document.addEventListener('keydown', jump);
 //buttonUp.addEventListener('click', jump);

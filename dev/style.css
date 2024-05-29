@@ -16,21 +16,38 @@
   background: linear-gradient(#87CEEB, #E0F6FF);
 }
 
+.display-none{
+  display: none;
+}
+
 /*Hero*/
 .mario {
   position: absolute;
+}
+
+.walking{
   bottom: 0;
   width: 80px;
 }
 
+.lose{
+  width: 40px;
+  left: 20px;
+  animation: none;
+}
+
+.celebrate{
+  animation: none;
+}
+
 /*Enemies*/
 .pipe{
+  animation: pipe-animation 2s infinite linear;
   position: absolute;
   bottom: 0;
   width: 40px;
   /* left: 60px; */
   /* right: -40px; */
-  animation: pipe-animation 2s infinite linear;
 }
 
 /*Controls*/
@@ -42,30 +59,37 @@
 }
 
 .button-up{
+  display: none;
   top: 0px;
 }
 
 .button-down{
+  display: none;
   top: 40px;
 }
 
-/*Animations*/
+/*Actions*/
 .clouds{
   position: absolute;
   width: 250px;
   animation: clouds-animation 15s infinite linear;
 }
 
-/*
-.clouds-1{}
+
+.clouds-1{
+  animation: clouds-animation-1 20s infinite linear;  
+}
 .clouds-2{
-  animation: clouds-animation 30s infinite linear;
-} */
+  animation: clouds-animation-2 30s infinite linear;
+  transform: rotateY(180deg);
+  top: 20px;
+}
 
 .jump{
   animation: jump 500ms ease-out;
 }
 
+/*Animations*/
 @keyframes pipe-animation{
   from{
     right: -40px;
@@ -93,9 +117,18 @@
   }
 }
 
-@keyframes clouds-animation{
+@keyframes clouds-animation-1{
   from{
     right: -250px;
+  }
+  to{
+    right: 100%;
+  }
+}
+
+@keyframes clouds-animation-2{
+  from{
+    right: -350px;
   }
   to{
     right: 100%;
