@@ -40,16 +40,6 @@
   animation: none;
 }
 
-/*Enemies*/
-.pipe{
-  animation: pipe-animation 2s infinite linear;
-  position: absolute;
-  bottom: 0;
-  width: 40px;
-  /* left: 60px; */
-  /* right: -40px; */
-}
-
 /*Controls*/
 .button-moves {
   width: 35px;
@@ -68,25 +58,32 @@
   top: 40px;
 }
 
-/*Actions*/
+.jump{
+  animation: jump 500ms ease-out;
+}
+
+/*Enemies*/
+.pipe{
+  animation: pipe-animation 2s infinite linear;
+  position: absolute;
+  bottom: 0;
+  width: 40px;
+}
+
+/*Scenario*/
 .clouds{
   position: absolute;
   width: 250px;
-  animation: clouds-animation 15s infinite linear;
 }
-
 
 .clouds-1{
-  animation: clouds-animation-1 20s infinite linear;  
-}
-.clouds-2{
-  animation: clouds-animation-2 30s infinite linear;
-  transform: rotateY(180deg);
-  top: 20px;
+  animation: clouds-animation-1 15s infinite linear;
 }
 
-.jump{
-  animation: jump 500ms ease-out;
+.clouds-2{
+  animation: clouds-animation-2 20s infinite linear;
+  transform: rotateY(180deg);
+  top: 20px;
 }
 
 /*Animations*/
@@ -128,7 +125,7 @@
 
 @keyframes clouds-animation-2{
   from{
-    right: -350px;
+    right: -450px;
   }
   to{
     right: 100%;
