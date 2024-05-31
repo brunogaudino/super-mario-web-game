@@ -9,15 +9,25 @@
 <body>
   
   <div class="game-board">
-    <input type="button" value="Up" class="button-moves button-up">
-    <input type="button" value="Down" class="button-moves button-down">
+    <input class="button-moves button-up" type="button" value="Up">
+    <input class="button-moves button-down" type="button" value="Down">
 
-    <img src="./static/img/scenario/clouds.png" alt="clouds" class="clouds clouds-1">
-    <img src="./static/img/scenario/clouds.png" alt="clouds" class="clouds clouds-2">
-    <img src="./static/img/mario/mario-walking.gif" alt="mario walking" class="mario walking">
-    <img src="./static/img/mario/mario-lose.png" alt="mario lose" class="mario lose display-none">
-    <img src="./static/img/mario/mario-celebrate.gif" alt="mario celebrate" class="mario celebrate display-none">
-    <img src="./static/img/enemies/pipe.png" alt="pipe" class="pipe">
+    <div class="presentation">
+      <img class="game-logo" src="./static/img/scenario/presentation.png" alt="Super Mario logo">
+      <h1>Web Game</h1>
+      <h4>Press enter to start</h4>
+      <h5>A game build it with HTML,CSS and JavaScript</h5>
+    </div>
+    
+    <div class="game display-none">
+      <img class="clouds clouds-1" src="./static/img/scenario/clouds.png" alt="clouds">
+      <img class="clouds clouds-2" src="./static/img/scenario/clouds.png" alt="clouds">
+      <img class="mario walking" src="./static/img/mario/mario-walking.gif" alt="mario walking">
+      <img class="mario lose display-none" src="./static/img/mario/mario-lose.png" alt="mario lose">
+      <img class="mario celebrate display-none" src="./static/img/mario/mario-celebrate.gif" alt="mario celebrate">
+      <img class="pipe" src="./static/img/enemies/pipe.png" alt="pipe">
+    </div>
+  
   </div>
   
   <script src="./static/scripts.js"></script>

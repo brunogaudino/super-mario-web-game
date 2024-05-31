@@ -10,8 +10,12 @@ const enemy = document.querySelector('.pipe');
 let countEnemies = 0;
 
 //Background
+let game = document.querySelector('.game');
+let presentation = document.querySelector('.presentation');
 let clouds1 = document.querySelector('.clouds-1');
 let clouds2 = document.querySelector('.clouds-2');
+
+/*============================================================================================================*/
 
 //Game Start
 const gameStart = setInterval(() => {
@@ -36,6 +40,8 @@ const gameRules = ((enemyPosition, marioPosition) => {
 const changeEnemy = ((enemyName) => {
 
 });
+
+/*============================================================================================================*/
 
 //Actions
 const jump = () => {
@@ -62,8 +68,6 @@ const marioHit = (marioWasHit, enemyPosition, marioPosition) => {
     marioLose.classList.remove('display-none');
     marioLose.style.bottom = `${marioPosition}px`;
 
-    //cloudsMove(clouds1.offsetLeft, clouds2.offsetLeft);
-
     //stop game
     clearInterval(gameStart);
 
@@ -71,28 +75,34 @@ const marioHit = (marioWasHit, enemyPosition, marioPosition) => {
 
 }
 
-const cloudsMove = (clouds1Position, clouds2Position) => {
-
-  // console.log('c1 ', `${clouds1Position}`);
-  // console.log('c2 ', `${clouds2Position}`);
-  // clouds1.style.animation = 'clouds-animation-1 45s infinite linear';
-  // clouds2.style.animation = 'clouds-animation-2 60s infinite linear';
-  // clouds1.style.left = `${clouds1Position}`;
-  // clouds2.style.left = `${clouds2Position}`;
-
-}
+/*============================================================================================================*/
 
 //Commands
 //document.addEventListener('keydown', jump);
 document.addEventListener('keydown', (event)=>{
 
-  console.log('event ', event.key);
-
   if (event.key == 'ArrowUp') {
 
     jump();   
   
+  } else if(event.key == 'Enter'){
+
+    game.classList.remove('display-none');
+    presentation.classList.add('display-none');
+
   }
 
 });
+
 //buttonUp.addEventListener('keydown', jump);
+
+// const cloudsMove = (clouds1Position, clouds2Position) => {
+
+//   console.log('c1 ', `${clouds1Position}`);
+//   console.log('c2 ', `${clouds2Position}`);
+//   clouds1.style.animation = 'clouds-animation-1 45s infinite linear';
+//   clouds2.style.animation = 'clouds-animation-2 60s infinite linear';
+//   clouds1.style.left = `${clouds1Position}`;
+//   clouds2.style.left = `${clouds2Position}`;
+
+// }
