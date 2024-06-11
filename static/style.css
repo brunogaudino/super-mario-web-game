@@ -9,17 +9,26 @@
   display: none;
 }
 
-/*Screenboard*/
+/*GAME BOARD*/
 .game-board{
+  position: relative;
   width: 100%;
   height: 300px;
   border-bottom: 15px solid rgb(35,160,35);
   margin: 0px auto;
-  position: relative;
   overflow: hidden;
   background: linear-gradient(#87CEEB, #E0F6FF);
 }
 
+.game-board .button-up{
+  position: absolute;
+  padding: 20px;
+  top: 20px;
+  left: 30px;
+  opacity: 0.5;
+}
+
+/*PRESENTATION*/
 .game-board .presentation{
   width: 100%;
   height: 100%;
@@ -27,10 +36,41 @@
   padding-top: 20px;
 }
 
+.game-board .presentation h4{
+  font-weight: 900;
+  text-decoration: underline;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
 .game-board .presentation .game-logo{
   margin: 0px auto;
   width: 200px;
   height: 100px;
+}
+
+/*GAME OVER*/
+.game-board .game-over{
+  /* position: absolute; */
+  padding-top: 20px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+.game-board .game-over h1{
+  padding: 20px 0px;
+  font-size: 3em;
+  color: #fff;
+}
+
+.game-board .game-over .button-restart{
+  padding: 15px;
+  border-radius: 20px;
+  margin: 0px auto;
+  font-size: 2em;
+  font-weight: bold;
 }
 
 /*Hero*/
@@ -53,24 +93,6 @@
   animation: none;
 }
 
-/*Controls*/
-.button-moves {
-  width: 35px;
-  height: 35px;
-  opacity: 0.3;
-  position: absolute;
-}
-
-.button-up{
-  display: none;
-  top: 0px;
-}
-
-.button-down{
-  display: none;
-  top: 40px;
-}
-
 .jump{
   animation: jump 500ms ease-out;
 }
@@ -91,6 +113,7 @@
 
 .game-board .game .clouds-1{
   animation: clouds-animation-1 15s infinite linear;
+  top: 0px;
 }
 
 .game-board .game .clouds-2{

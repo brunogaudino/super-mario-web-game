@@ -9,25 +9,30 @@
 <body>
   
   <div class="game-board">
-    <input class="button-moves button-up" type="button" value="Up">
-    <input class="button-moves button-down" type="button" value="Down">
-
+    
     <div class="presentation">
       <img class="game-logo" src="./static/img/scenario/presentation.png" alt="Super Mario logo">
       <h1>Web Game</h1>
-      <h4>Press enter to start</h4>
-      <h5>A game build it with HTML,CSS and JavaScript</h5>
+      <h4 onclick="start()">Tap or click here to start</h4>
+      <h5>Use the ArrowUp button or tap de "UP" button to jump the enemies.</h5>
+      <h5>A game build it with HTML,CSS and JavaScript.</h5>
     </div>
     
     <div class="game display-none">
       <img class="clouds clouds-1" src="./static/img/scenario/clouds.png" alt="clouds">
       <img class="clouds clouds-2" src="./static/img/scenario/clouds.png" alt="clouds">
+      <img class="pipe" src="./static/img/enemies/pipe.png" alt="pipe">
       <img class="mario walking" src="./static/img/mario/mario-walking.gif" alt="mario walking">
       <img class="mario lose display-none" src="./static/img/mario/mario-lose.png" alt="mario lose">
       <img class="mario celebrate display-none" src="./static/img/mario/mario-celebrate.gif" alt="mario celebrate">
-      <img class="pipe" src="./static/img/enemies/pipe.png" alt="pipe">
+      <input class="button-up" onclick="jump()" type="button" value="UP">
     </div>
-  
+
+    <div class="game-over display-none">
+      <h1>GAME OVER</h1>
+      <input class="button-restart" onclick="restart()" type="button" value="RESTART">
+    </div>
+
   </div>
   
   <script src="./static/scripts.js"></script>
